@@ -12,12 +12,25 @@ body {
 .navbar {
   background-color: var(--main-color);
   z-index: 2;
-  border-top: #090102 solid 11px;
+  border-top: 11px solid #2926263d;
+  border: 1px solid #2926263d;
   box-shadow: 5px -1px 10px 0px black;
 }
 .navbar-nav {
   background: #fff;
   border-radius: 60px;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+  border: 1px solid black;
+}
+@media (max-width: 967px) {
+  .navbar-nav {
+    background-color: var(--main-color);
+  }
+  .nav-link span {
+    color: white !important;
+  }
 }
 @media (max-width: 767px) {
   .navbar-nav {
@@ -91,6 +104,11 @@ body {
   border-right: 24px solid black;
   border-top: 25px solid black;
 }
+@media (max-width: 767px) {
+  .child::before {
+    display: none;
+  }
+}
 .child p {
   font-size: 17px;
   line-height: 32px;
@@ -116,11 +134,11 @@ body {
   width: 100%;
   height: 250px;
   margin-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid #2926263d;
   transition: 0.3s;
 }
 .glasses_box:hover {
-  box-shadow: 0px 2px 15px rgb(0 0 0 / 50%);
+  box-shadow: 0px 2px 15px rgb(0 0 0 / 30%);
 }
 #span:hover {
   box-shadow: 0px 2px 15px #d4af37;
@@ -177,9 +195,7 @@ body {
   padding: 30px;
   line-height: 2.3;
   background-color: black;
-  position: relative;
   width: auto;
-  height: 400px;
 }
 .second p {
   font-size: 17px;
@@ -191,7 +207,7 @@ body {
 }
 .second h1::before {
   content: "";
-  width: auto;
+  width: 400px;
   background-color: white;
   height: 2px;
   position: absolute;
@@ -201,6 +217,12 @@ body {
   .second {
     width: 100%;
     height: auto;
+  }
+  .second h1::before {
+    display: none;
+  }
+  .second h1 {
+    border-bottom: 2px solid white;
   }
 }
 /* end shop */
@@ -231,12 +253,21 @@ body {
   line-height: 28px;
   width: 100%;
 }
-@media (max-width: 767px) {
+@media (max-width: 967px) {
   .tittle img {
     z-index: 1;
-    position: initial;
-    top: 22px !important;
-    left: -90px !important;
+    position: absolute;
+    top: 22px;
+    left: -13%;
+  }
+}
+@media (max-width: 767px) {
+  .tittle img {
+    margin-top: -9%;
+    margin-bottom: 23px;
+    z-index: 1;
+    margin-left: -23%;
+    position: relative;
   }
   .tittle {
     border: 1px solid;
